@@ -11,6 +11,7 @@ import android.support.annotation.RequiresApi
 import android.support.v4.app.NotificationCompat
 import android.support.v4.content.ContextCompat
 import android.support.v4.media.MediaDescriptionCompat
+import android.support.v4.media.app.NotificationCompat as MediaNotificationCompat
 import android.support.v4.media.session.MediaButtonReceiver
 import android.support.v4.media.session.MediaSessionCompat
 import android.support.v4.media.session.PlaybackStateCompat
@@ -140,7 +141,7 @@ class NotificationsManager(private val mService: AudioService) {
                                 MediaButtonReceiver.buildMediaButtonPendingIntent(
                                         mService,
                                         PlaybackStateCompat.ACTION_STOP)))
-                .setColor(ContextCompat.getColor(mService, R.color.colorAccent))
+                .setColor(ContextCompat.getColor(mService, R.color.colorAccentNotification))
                 .setSmallIcon(R.drawable.ic_pulse)
                 // Pending intent that is fired when user clicks on notification.
                 .setContentIntent(createPendingIntentForMedia(mService, description))
